@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <script src="https://coolors.co/palette-widget/widget.js"></script>
     <script data-id="009805671702308416">new CoolorsPaletteWidget("009805671702308416", ["8ecae6","219ebc","023047","ffb703","fb8500"]); </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     {% block style%}{% endblock%}
 
     {% block script %}{% endblock%}
@@ -29,7 +30,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav text-center ms-auto fs-6 fw-bold">
+                    <ul class="navbar-nav text-center ms-auto fs-5 fw-bold" >
                         <li>
                             <a class="nav-link text-dark" href="#">หน้าหลัก</a>
                         </li>
@@ -48,61 +49,78 @@
         </div>
     </div>
     <section>
-        <div class="container p-5 text-center ">
-            <img src="{% static 'image/rocket.png' %}" alt="wait wait" width="100">
-            <h1 style="color: #023047;">welcome in website for learning code</h1>
+        <div class="container p-5 text-center">
+            <div class="container" id="edit-container">
+                <img src="{% static 'image/rocket.png' %}" alt="wait wait" width="100">
+                <h1 class="edit-h1">welcome in website for learning code</h1>
+            </div>
         </div>
 
     </section>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 text-center">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static '/image/landingpage1.jpg' %}">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                Hello World ;)
-                            </h4>
-                            <p class="card-text">ครูผู้ช่วย โรงเรียนบ้านเซียมป่าหม้อ อำเภอแก้งคร้อ จังหวัดชัยภูมิ สอนวิชาวิทยาการคำนวณ</p>
-                            <a href="#" class="card-link">เพิ่มเติม</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="container-fluid">     
-                        <h2>Title Heading</h2>
-                        <h5>Title describsion ,9 may 2021</h5>
-                        <div class="fakeimg">fakeimg</div>
-                        <p>Some text...</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic iusto eligendi excepturi sed nisi minima maiores! Illum aspernatur dolorem sequi?</p>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="card">
+                    <img class="card-img-top" src="{% static '/image/landingpage1.jpg' %}">
+                    <div class="card-body">
+                        <h4 class="card-title">Hello World ;) </h4>
+                        <p class="card-text">ครูผู้ช่วย โรงเรียนบ้านเซียมป่าหม้อ อำเภอแก้งคร้อ จังหวัดชัยภูมิ สอนวิชาวิทยาการคำนวณ</p>
+                        <a href="#" class="card-link">เพิ่มเติม</a>
                     </div>
                 </div>
             </div>
+            <div class="col-md-9">
+                <div class="container-fluid">     
+                    <h2>Title Heading</h2>
+                    <h5>Title describsion ,9 may 2021</h5>
+                    <div class="fakeimg">fakeimg</div>
+                    <p>Some text...</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic iusto eligendi excepturi sed nisi minima maiores! Illum aspernatur dolorem sequi?</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+   
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-4">
-                    <h4>company</h4>
-                    <ul>
-                        <li><a href="#"></a></li>
-                    </ul>
+    <footer class="text-white pt-3 pb-4" id="footer">
+
+        <div class="container text-center text-md-left" style="background-color: #023047;">
+            <div class="row text-center text-md-left">
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">โรงเรียนบ้านเซียมป่าหม้อ</h5>
+                    <p>ตั้งอยู่ หมู่ที่ 7 ตำบลโคกกุง อำเภอ แก้งคร้อ จังหวัดชัยภูมิ รหัสไปรษณีย 36150</p>
                 </div>
-                <div class="footer-col-4">
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href="#"></a></li>
-                    </ul>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">บทความแนะนำ</h5>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">article1</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">article1</a>
+                    </p>
                 </div>
-                <div class="footer-col-4">
-                    <h4>follow us</h4>
-                    <ul>
-                        <li><a href="#"></a></li>
-                    </ul>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">ยังไม่รู้</h5>
+                    <p>
+                        <a href="#">article1</a>
+                    </p>
+                    <p>
+                        <a href="#">article1</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">ติดต่อสอบถาม</h5>
+                    <p>
+                        <i class="fas fa-home mr-3"></i> Chaiyaphum,TH
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> krutaweewat@gmail.com
                 </div>
             </div>
         </div>
