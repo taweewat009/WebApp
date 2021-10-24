@@ -1,0 +1,17 @@
+#con {
+    background-color: red;
+}
+
+.Hello {
+    background-color: red;
+}
+
+#headerbrand {
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#logo {
+    width: 5%;
+    margin-left: 300px;
+}
