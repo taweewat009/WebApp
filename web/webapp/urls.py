@@ -19,6 +19,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index),
+    path('',views.index, name='index'),
     path('main/',views.main),
+    path('guestbook/',views.index, name='guestbook'),
+    path('guestbook/comment/',views.guestbook_comment, name='guestbook_comment'),
+    path('guestbook/view/<int:pg>/',views.guestbook_view, name='guestbook_view'),
 ]
