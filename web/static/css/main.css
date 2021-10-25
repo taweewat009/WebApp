@@ -23,14 +23,3 @@ body {
 #pic1{
     width: 200px;
 }
-
-.edit-h1 {
-    color: #023047;
-    border-color: #023047;
-    border-radius: 1rem;
-    background-color: #FFB703;
-}
-
-#edit-container {
-    width: 700px;
-}
