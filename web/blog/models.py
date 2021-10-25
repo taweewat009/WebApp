@@ -1,12 +1,12 @@
 from django.db import models
-from category.models import Category
+from database.models import Category
 
 # Create your models here.
 class Blogs(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     content = models.TextField()
-    category = models.ForeignKey(category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     writer = models.CharField(max_length=255)
     views = models.IntegerField(default=0)
     images = models.ImageField(upload_to="blogs",blank=True)

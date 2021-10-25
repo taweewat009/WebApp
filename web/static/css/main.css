@@ -23,3 +23,11 @@ body {
 #pic1{
     width: 200px;
 }
+
+#sizecontent {
+    background-color: blue;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+}
+
