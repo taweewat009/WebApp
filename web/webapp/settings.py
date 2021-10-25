@@ -68,7 +68,7 @@ TEMPLATES = [
             ],
             'builtins':[
                 'webapp.filters'
-            ]
+            ],
         },
     },
 ]

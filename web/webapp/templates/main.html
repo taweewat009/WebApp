@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,21 +133,11 @@
         </div>
     </div>
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-9">
-                <div class="container-sm fs-5 fw-bold">
-                    <label for="comment">แสดงความคิดเห็น</label>
-                    <textarea class="form-control" row="5" id="comment" name="text"></textarea>
-                    <caption ><button class="btn btn-success mt-2">ส่ง</button></caption>
-                </div>
-            </div>
-        
-    {% block comment %}
-
     
-    {% endblock %}
+        {% block comment %}
+
+        
+        {% endblock %}
        
     <footer class="text-white pt-3 pb-4" id="footer">
 

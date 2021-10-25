@@ -4,10 +4,7 @@ from django import forms
 # Create your models here.
 
 class Guestbook(models.Model):
-    name = models.CharField(max_length=30)
-    email = models.EmailField(max_length=150,null=True, blank=True)
-    phone = models.CharField(max_length=30, null=True, blank=True)
-    message = models.CharField(max_length=500)
+    message = models.CharField(max_length=200)
     date = models.DateField(auto_now=True)
 
 class GuestbookForm(forms.ModelForm):
@@ -16,13 +13,18 @@ class GuestbookForm(forms.ModelForm):
         fields = '__all__'
         excludes = {'date'}
         labels = {
-            'name':'ชื่อ',
-            'email':'อีเมลล์',
-            'phone':'โทรศัพท์',
-            'message':'ข้อความ',
+            'message':'ช่องแสดงความคิดเห็น'
         }
         widgets = {
-            'email':forms.EmailInput(attrs={'required':False}),
-            'phone':forms.TextInput(attrs={'required':False}),
-            'message':forms.Textarea(attrs={'row':'3'})
+            'message':forms.Textarea(attrs={'row':'3'})     
         }
+
+
+class Post(models.Model):
+    name = models.CharField(max_length=200)
+    desc = models.TextField()
+    author=models.TextField()
+    category= models.TextField()
+
+    def __str__(self):
+        return self.name+"/"+self.author+"/"+self.category
