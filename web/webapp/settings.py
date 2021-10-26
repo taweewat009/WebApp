@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'database',
     'crispy_forms',
     'blog',
+    'django.contrib.humanize',
+    'ckeditor',
+    'loginsystem',
+    
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

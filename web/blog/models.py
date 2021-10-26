@@ -1,5 +1,6 @@
 from django.db import models
 from database.models import Category
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Blogs(models.Model):
@@ -15,3 +16,4 @@ class Blogs(models.Model):
 
     def __str__(self):
         return self.name
+

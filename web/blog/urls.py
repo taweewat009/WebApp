@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path , include
-from . import views
+from .views import index,blogdetail
 
 urlpatterns = [
-    path('',views.index),
+    path('',index,name="index"),
+    path('blog/<int:id>',blogdetail,name="blogdetail")
 ]
