@@ -66,3 +66,19 @@ def searchCategory(request,category_id):
 
     return render(request, 'searchcategory.html',{'blogs':blogs,'categories':categories ,'lastest':lastest, 'popular':popular, 'recommend':recommend})
 
+
+
+def aboutme(request):
+    
+       # อ่านข้อมูลหมวดหมู่ทั้งหมด แล้วเก็บในตัวแปร categories
+    categories = Category.objects.all()   
+
+    lastest = Blogs.objects.all().order_by('-pk')[:4]   # อ่านของข้อมูลblogทั้งหมด แล้วเรียงลำดับตาม id จากมากไปน้อย เอาแค่4 ตัว เก็บในตัวแปร lastest
+
+    # บทความยอดนิยม
+    popular = Blogs.objects.all().order_by('-views')[:3]
+
+    # บทความแนะนำ
+    recommend = Blogs.objects.all().order_by('views')[:3]
+
+    return render(request, 'about.html',{'categories':categories ,'lastest':lastest, 'popular':popular, 'recommend':recommend})

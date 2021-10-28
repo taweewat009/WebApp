@@ -26,10 +26,10 @@
     {% block script %}{% endblock%}
     <!----  https://coolors.co/8ecae6-219ebc-023047-ffb703-fb8500 -->
 </head>
-<body  style="font-family: 'Kanit', sans-serif;">
+<body style="font-family: 'Kanit', sans-serif;">
     <div class="container-fluid bg-light " >
         <div class="container">
-            <nav class="navbar navbar-expand-md " >
+            <nav class="navbar navbar-expand-sm " >
                 <a href="{% url 'index'%}"><img src="{% static '/image/logo.png' %}" alt="" width="30%" class="ms-5"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-labels="Toggle navigation">
                     <span class="fa fa-caret-square-o-down"></span>
@@ -37,13 +37,13 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav text-center ms-auto fs-5 fw-bold" >
                         <li>
-                            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                            <nav class="navbar nav-pills navbar-expand-md navbar-light bg-light">
                                 <form class="form-inline">
-                                    <a href="{% url 'index' %}"><button class="btn btn-outline-success" type="button">หน้าหลัก</button></a>
+                                    <a href="{% url 'index' %}"><button class="btn btn-outline-success " type="button">หน้าหลัก</button></a>
                                     <a href="{% url 'index' %}"><button class="btn btn-outline-success" type="button">บทเรียน</button></a>
-                                    <a href="{% url 'certificate' %}"><button class="btn btn-outline-success" type="button">ผลงาน</button></a>
-                                    <a href="{% url 'member' %}"><button class="btn btn-outline-primary" type="button">ระบบจัดการบทเรียน</button></a>
-                                </form>
+                                    <a href="#"><button class="btn btn-outline-success" type="button">ผลงาน</button></a>
+                                    <a href="{% url 'member' %}" class="btn btn-primary">admin</a>
+                                </form>   
                             </nav>  
                         </li>
                     </ul>
@@ -66,14 +66,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 text-center">
-                <div class="card">
-                    <img class="card-img-top" src="{% static '/image/me.png' %}">
-                    <div class="card-body">
-                        <h4 class="card-title">Hello World ;) </h4>
-                        <p class="card-text">ครูผู้ช่วย โรงเรียนบ้านเซียมป่าหม้อ อำเภอแก้งคร้อ จังหวัดชัยภูมิ สอนวิชาวิทยาการคำนวณ</p>
-                        <a href="#" class="card-link">เพิ่มเติม</a>
-                    </div>
-                </div>
+                {% block profile %}
+                {% endblock %}
                 <div class="card mt-2">
                     <div class="card-body">
                         <h4 class="card-title">บทเรียนล่าสุด</h4>

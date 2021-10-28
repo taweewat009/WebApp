@@ -1,9 +1,10 @@
 {% extends 'layout.html'%}
 
 {% block content %}
-<div class="col-md-9">
-    <div class="container-fluid ">  
+<div class="col-md-9 mt-3">
+    <div class="container-fluid">  
         <h1 class="text-center"> {{singleblog.name}}</h1>
+        <p class="text-center">{{singleblog.created}}/ view :{{singleblog.views}}</p>
         <p>{{singleblog.content|safe}}</p>
     </div>
 </div>
