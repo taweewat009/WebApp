@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@3!zb^xcb+d87agm2@ul3l*q4h8+)+geeyulfdn3gco)la6#0_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'ckeditor',
     'loginsystem',
+    'writerpanel',
     
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -3,24 +3,24 @@
 
 
 {% block content %}
-<div class="col-md-9">
-    <div class="container-fluid border">  
+<div class="col-md-9 border">
+    <div class="container-fluid ">  
         <div class="row">
             {% for n in blog %}
-            <div class="col-4 my-3">
-                <h2 class="text-primary fw-bold text-center ">{{ n.name }}</h2>
-                <h5 class="badge bg-warning my-0">หมวดหมู่ : {{ n.category }}</h5>
-                <img class="card-img-top img-thumbnail overflow-hidden" src="{{ n.images.url}}" style="max-height: 250px;" >  
+            <div class="col-sm-4 border">
+                <h4 class="text-primary fw-bold text-center ">{{ n.name }}</h2>
+                <a href="{% url 'blogdetail' n.id %}"><img class="card-img-top overflow-hidden" src="{{ n.images.url}}" style="max-height: 250px;" ></a>
             </div>  
-            <div class=" blog-meta col-8 py-3 "> 
-                <h4>{{ n.description}}</h4>
-                <p class="overflow-hidden" style="height: 200px;"> {{ n.content }} </p>
-                <a href="{% url 'blogdetail' n.id %}"> รายละเอียดทั้งหมด</a>
-                <small class="firstsmall"><a href="#" title="" class="text-decoration-none"> by {{ n.writer }} / </a></small>   
-                <small><a href="#" title="" class="text-decoration-none"> {{ n.created }} /</a></small> 
-                <small><a href="#" title="" class="text-decoration-none"><i class="fa fa-eye"></i> {{ n.views|intcomma }} /</a></small>
-            </div>
-            {% endfor %}
+            <div class=" container col-sm-8"> 
+                <div class="container-md">
+                    <a class= "text-decoration-none text-dark" href="{% url 'blogdetail' n.id %}"><h4>{{ n.description}}</h4></a>
+                    <div class="container-sm overflow-hidden"style="height: 300px;">
+                        <a class= "text-decoration-none text-dark" href="{% url 'blogdetail' n.id %}"><p> {{ n.content|safe }} </p></a>
+                    </div>
+                    <a class= "text-decoration-none text-dark" href="{% url 'blogdetail' n.id %}"><button class="btn btn-primary">รายละอียดเพิ่มเติม</button></a> <span class="badge bg-warning">by {{ n.writer}}</span><span class="badge bg-danger"> {{ n.created }}</span><span class="badge bg-dark text-white">view : {{ n.views }}</span>       
+                </div>             
+            </div>           
+            {% endfor %}    
         </div>        
     </div>
 </div>

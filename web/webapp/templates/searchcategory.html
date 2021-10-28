@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+    <div class="col-md-9">
+        <div class="container-fluid border">  
+            <div class="row">
+                {% for show in blogs %}
+                <div class="col-4 my-3">
+                    <h2 class="text-primary fw-bold text-center ">{{ show.name }} </h2>
+                    <h5 class="badge bg-warning my-0">หมวดหมู่ : {{show.category }}</h5>
+                    <img class="card-img-top img-thumbnail overflow-hidden" src="{{ show.images.url}}" style="max-height: 250px;" >  
+                </div>  
+                <div class=" blog-meta col-8 py-3 "> 
+                    <div class="container">
+                        <h3>{{ show.description }}</h3>
+                    </div>
+                    <h4></h4>
+                    <p class="overflow-hidden" style="height: 200px;">{{ show.content|safe }} </p>
+                    <a href="#"> รายละเอียดทั้งหมด</a>
+                    <small class="firstsmall"><a href="#" title="" class="text-decoration-none"> by {{ show.writer }} / </a></small>   
+                    <small><a href="#" title="" class="text-decoration-none"> {{ show.created }} /</a></small> 
+                    <small><a href="#" title="" class="text-decoration-none"><i class="fa fa-eye"></i> {{ show.views|intcomma }} /</a></small>
+                </div>
+                {% endfor %}
+            </div>        
+        </div>
+    </div>
+
+
+{% endblock %}

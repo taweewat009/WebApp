@@ -18,41 +18,40 @@
     <script src="https://coolors.co/palette-widget/widget.js"></script>
     <script data-id="009805671702308416">new CoolorsPaletteWidget("009805671702308416", ["8ecae6","219ebc","023047","ffb703","fb8500"]); </script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d2ee47443b.js" crossorigin="anonymous"></script>
     {% block style%}{% endblock%}
 
     {% block script %}{% endblock%}
     <!----  https://coolors.co/8ecae6-219ebc-023047-ffb703-fb8500 -->
 </head>
-<body class="bg-light" style="font-family: 'Kanit', sans-serif;">
-    <div class="container-fluid">
+<body  style="font-family: 'Kanit', sans-serif;">
+    <div class="container-fluid bg-light " >
         <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a href="#"><img src="{% static '/image/logo.png' %}" alt="" width="30%" class="ms-5"></a>
+            <nav class="navbar navbar-expand-md " >
+                <a href="{% url 'index'%}"><img src="{% static '/image/logo.png' %}" alt="" width="30%" class="ms-5"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-labels="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="fa fa-caret-square-o-down"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav text-center ms-auto fs-5 fw-bold" >
                         <li>
-                            <a class="nav-link text-dark" href="{% url 'index' %}">หน้าหลัก</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-dark" href="#">บทเรียน</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-dark" href="#">ผลงาน</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-dark" href="#">เกี่ยวกับ</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-dark" href="{% url 'register' %}">นักเขียน</a>
+                            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                                <form class="form-inline">
+                                    <a href="{% url 'index' %}"><button class="btn btn-outline-success" type="button">หน้าหลัก</button></a>
+                                    <a href="{% url 'index' %}"><button class="btn btn-outline-success" type="button">บทเรียน</button></a>
+                                    <a href="{% url 'certificate' %}"><button class="btn btn-outline-success" type="button">ผลงาน</button></a>
+                                    <a href="{% url 'member' %}"><button class="btn btn-outline-primary" type="button">ระบบจัดการบทเรียน</button></a>
+                                </form>
+                            </nav>  
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
+    <br>
     <section>
         <div class="container p-5 text-center">
             <div class="container">
@@ -79,13 +78,19 @@
                     <div class="card-body">
                         <h4 class="card-title">บทเรียนล่าสุด</h4>
                         {% for last in lastest %}
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link text-dark" href="{% url 'blogdetail' last.id%}">{{last.name}}</a></li>
-                        </ul>
+                            <button class="btn btn-primary border " style="border-radius: 10px;"><a class="text-white text-decoration-none " href="{% url 'blogdetail' last.id %}">{{last.name}}</a></button>
                         {% endfor %}
                     </div>
                 </div>
-                
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h4 class="card-title">หมวดหมู่ทั้งหมด</h4>
+                        <button class="btn btn-primary border" style="border-radius: 10px;"><a class="text-white text-decoration-none" href="{% url 'searchCategory' category_id=1 %}">วิทยาการคำนวณ</a></button>
+                        <button class="btn btn-primary border" style="border-radius: 10px;"><a class="text-white text-decoration-none" href="{% url 'searchCategory' category_id=3 %}">การออกแบบและเทคโนโลยี</a></button>
+                        <button class="btn btn-primary border" style="border-radius: 10px;"><a class="text-white text-decoration-none" href="{% url 'searchCategory' category_id=5 %}">คอมพิวเตอร์เพิ่มเติม</a></button>
+                        <button class="btn btn-primary border" style="border-radius: 10px;"><a class="text-white text-decoration-none" href="{% url 'searchCategory' category_id=6 %}">ความรู้ไอทีทั่วไป</a></button>
+                    </div>
+                </div>   
             </div>
             {% block content %}
 
@@ -95,8 +100,8 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-3 "></div>
-            <div class="col-9 ">
+            <div class="col-md-3 "></div>
+            <div class="col-md-9 ">
                 <nav aria-label="Page navigation">
                     {% if blog.paginator.num_pages > 1 %}
                     <ul class="pagination justify-content-center mt-4">       
@@ -109,49 +114,50 @@
             </div>
         </div>
     </div>
-         
-    <footer class="text-white pt-3 pb-4" id="footer">
+   <div class="container-fluid ">
+        <footer class="text-white pt-3 pb-4" id="footer">
+            <div class="container text-center text-md-left" style="background-color: #023047;">
+                <div class="row text-center text-md-left">
 
-        <div class="container text-center text-md-left" style="background-color: #023047;">
-            <div class="row text-center text-md-left">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">โรงเรียนบ้านเซียมป่าหม้อ</h5>
+                        <p>ตั้งอยู่ หมู่ที่ 7 ตำบลโคกกุง อำเภอ แก้งคร้อ จังหวัดชัยภูมิ รหัสไปรษณีย 36150</p>
+                    </div>
 
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">โรงเรียนบ้านเซียมป่าหม้อ</h5>
-                    <p>ตั้งอยู่ หมู่ที่ 7 ตำบลโคกกุง อำเภอ แก้งคร้อ จังหวัดชัยภูมิ รหัสไปรษณีย 36150</p>
-                </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">บทเรียนแนะนำ</h5>
+                        {% for recom in recommend %}
+                            <ul class="navbar-nav my-2">
+                                <li class="nav-item">
+                                    <a href="{% url 'blogdetail' recom.id %}" class="text-white" style="text-decoration: none;">{{ recom.name }}</a>
+                                </li>
+                            </ul>
+                        
+                        {% endfor %}
+                    </div>
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">บทเรียนแนะนำ</h5>
-                    {% for recom in recommend %}
-                        <ul class="navbar-nav my-2">
-                            <li class="nav-item">
-                                <a href="{% url 'blogdetail' recom.id %}" class="text-white" style="text-decoration: none;">{{ recom.name }}</a>
-                            </li>
-                        </ul>
-                       
-                    {% endfor %}
-                </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">บทเรียนยอดนิยม</h5>
+                        {% for pop in popular %}
+                            <p>
+                                <a class="text-decoration-none text-white" href="{% url 'blogdetail' pop.id %}">{{ pop.name }} </a>
+                            </p>
+                        {% endfor %}
+                    </div>
 
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">บทเรียนยอดนิยม</h5>
-                    {% for pop in popular %}
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">ติดต่อสอบถาม</h5>
                         <p>
-                            <a class="text-decoration-none text-white" href="{% url 'blogdetail' pop.id %}">{{ pop.name }} </a>
+                            <i class="fas fa-home mr-3"></i> Chaiyaphum,TH
                         </p>
-                    {% endfor %}
-                </div>
-
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FFB703;">ติดต่อสอบถาม</h5>
-                    <p>
-                        <i class="fas fa-home mr-3"></i> Chaiyaphum,TH
-                    </p>
-                    <p>
-                        <i class="fas fa-envelope mr-3"></i> krutaweewat@gmail.com
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> krutaweewat@gmail.com
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+   </div>      
+    
    
 </body>
 </html>

@@ -12,7 +12,7 @@ class Blogs(models.Model):
     views = models.IntegerField(default=0)
     images = models.ImageField(upload_to="blogs",blank=True)
     created = models.DateTimeField(auto_now_add=True)
-
+    
 
     def __str__(self):
         return self.name

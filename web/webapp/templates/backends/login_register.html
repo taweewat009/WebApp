@@ -37,15 +37,15 @@
 
                         <!-- Key Features -->
                         <ul class="fa-ul text-muted">
-                            <li><i class="fa fa-check fa-li text-success"></i> สมัครเป็นนักเขียน</li>
-                            <li><i class="fa fa-check fa-li text-success"></i> เขียนบทความของคุณ</li>
+                            <li><i class="fa fa-check fa-li text-success"></i> สมัครสมาชิก</li>
+                            <li><i class="fa fa-check fa-li text-success"></i> เขียนบทความ</li>
                             <li><i class="fa fa-check fa-li text-success"></i> แชร์บทความของคุณ</li>
                         </ul>
                         <!-- END Key Features -->
 
                         <!-- Footer -->
                         <footer class="text-muted push-top-bottom">
-                            <small> &copy; <a href="#" target="_blank">Django Framework | KongRuksiam</Frame></a></small>
+                            <small> &copy; <a href="#" target="_blank">Website for learning | Taweewat</Frame></a></small>
                         </footer>
                         <!-- END Footer -->
                     </div>
@@ -62,7 +62,7 @@
                         <!-- Login Block -->
                         <div class="block push-bit">
                             <!-- Login Form -->
-                            <form action="#" method="post" id="form-login" class="form-horizontal">
+                            <form action="{% url 'login' %}" method="post" id="form-login" class="form-horizontal">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="col-xs-12">
@@ -83,7 +83,7 @@
                                 <div class="form-group form-actions">
                                     <div class="col-xs-6">
                                         {% for message in messages%}
-                                            <p style="color: red;">{{message}}</p>
+                                            <p style="color: rgb(255, 5, 5);font-size: 20px;">{{message}}</p>
                                         {% endfor%}
                                     </div>
                                     <div class="col-xs-6 text-right">
@@ -98,7 +98,7 @@
                             </form>
                             <!-- END Login Form -->
                             <!-- Register Form -->
-                            <form action="#" method="post" id="form-register" class="form-horizontal display-none">
+                            <form action="{% url 'addUser' %}" method="post" id="form-register" class="form-horizontal display-none">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="col-xs-12">
