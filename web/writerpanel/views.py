@@ -32,7 +32,7 @@ def insertdata(request):
         if request.method == "POST" and request.FILES["image"]:
             datafile = request.FILES["image"]
 
-            # รับค่าจากฟอร์ม ห
+            # รับค่าจากฟอร์ม 
             name = request.POST["name"]
             category = request.POST["category"]
             description = request.POST["description"]

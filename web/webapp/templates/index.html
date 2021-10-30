@@ -8,21 +8,22 @@
     <div class="container-fluid ">  
         <div class="row">
             {% for n in blog %}
-            <div class="col-sm-4 mt-3">
-                <h4 class="text-primary fw-bold text-center ">{{ n.name }}</h2>
-                <a href="{% url 'blogdetail' n.id %}"><img class="card-img-top overflow-hidden img-fluid" src="{{ n.images.url}}" style="max-height: 250px;" ></a>
+            <div class="col-sm-4 mt-5 shadow">
+                <h4 class="text-primary fw-bold text-center pt-3 ">{{ n.name }}</h2>
+                <a href="{% url 'blogdetail' n.id %}"><img class="card-img-top overflow-hidden img-fluid" src="{{ n.images.url}}" style="max-height: 250px;" id="image-css-index"></a>
+                <a href="#" class="fw-bold text-center">หมวดหมู่ : {{ n.category }}</a>
             </div>  
-            <div class=" container col-sm-8 mb-3"> 
+            <div class=" container col-sm-8 py-3" id="container-content-index"> 
                 <div class="container-md mt-3">
-                    <a class= "text-decoration-none text-dark" href="{% url 'blogdetail' n.id %}"><h4>{{ n.description}}</h4></a>
+                    <a class= "text-decoration-none text-dark text-end fst-italic" href="{% url 'blogdetail' n.id %}"><h4>{{ n.description}}</h4></a>
                     <div class="container-sm overflow-hidden"style="height: 300px;">
                         <a class= "text-decoration-none text-dark" href="{% url 'blogdetail' n.id %}"><p> {{ n.content|safe }} </p></a>
                     </div>
                     <a class= "text-decoration-none text-dark" href="{% url 'blogdetail' n.id %}"><button class="btn btn-primary">รายละอียดเพิ่มเติม</button></a> <span class="badge bg-warning">by {{ n.writer}}</span><span class="badge bg-danger"> {{ n.created }}</span><span class="badge bg-dark text-white">view : {{ n.views }}</span>       
-                </div>             
-            </div>           
-            {% endfor %}    
-        </div>        
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 
