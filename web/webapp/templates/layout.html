@@ -27,26 +27,27 @@
     <!----  https://coolors.co/8ecae6-219ebc-023047-ffb703-fb8500 -->
 </head>
 <body class="hero">
-    <div class="container-fluid" id="editcontainer">
+    <div class="container-fluid " id="editcontainer">
         <div class="container">
             <nav class="navbar navbar-expand-sm " >
-                <a href="{% url 'index'%}"><img src="{% static '/image/logo.png' %}" alt="" width="30%" class="magic" id="logo-hero"></a>
+                <a href="{% url 'index'%}"><img src="{% static '/image/logo.png' %}" alt="" width="40%" class="magic" id="logo-hero"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-labels="Toggle navigation">
-                    <span class="fa fa-caret-square-o-down"></span>
+                    <span class="far fa-caret-square-down"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav text-center ms-auto fs-5 fw-bold" >
-                        <li>
-                            <nav class="navbar nav-pills navbar-expand-md navbar-light bg-light">
-                                <form class="form-inline">
-                                    <a href="{% url 'index' %}"><button class="btn btn-outline-success " type="button">หน้าหลัก</button></a>
-                                    <a href="{% url 'index' %}"><button class="btn btn-outline-success" type="button">บทเรียน</button></a>
-                                    <a href="#"><button class="btn btn-outline-success" type="button">ผลงาน</button></a>
-                                    <a href="{% url 'member' %}" class="btn btn-primary">admin</a>
-                                </form>   
-                            </nav>  
+                    <ul class="navbar-nav fs-2">
+                        <li class="nav-item">
+                          <a class="nav-link text-white" href="#" id="hover-underline-animation">Home</a>
                         </li>
-                    </ul>
+                        <li class="nav-item ">
+                          <a class="nav-link text-white" href="/about">About</a>
+                        </li>  
+                         <li class="nav-item">
+                          <a class="nav-link text-white" href="/authors">Authors</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" href="/contact-us">Contact</a>
+                        </li>
                 </div>
             </nav>
         </div>
