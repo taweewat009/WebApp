@@ -4,9 +4,6 @@
 
 #logo-hero:hover{animation:heart 1.25s linear infinite}@keyframes heart{from{transform:scale(1)}10%{transform:scale(1.2)}}
 
-#image-css-index:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 #container-content-index:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -24,6 +21,10 @@
 
 #editcontainer {
     background-color: #023047;
+}
+
+#card-click:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
